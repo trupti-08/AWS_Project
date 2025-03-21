@@ -1,0 +1,89 @@
+#1: Update the Ubuntu Machine:
+
+sudo apt update
+
+#2: Install the Apache2 server
+
+sudo apt install apache2 -y
+
+#3: Go to the html directory:
+
+cd /var/www/html
+
+#4: Check the files in the directory:
+
+ls 
+
+#5: Remove the index.html file:
+
+sudo rm index.html
+
+#6: Check the files in the directory:
+
+ls 
+
+#7: Create an index.php file:
+
+sudo nano index.php
+
+#8: Install the MySQL Server:
+
+sudo apt install mysql-server -y
+
+#9: Connect to the MySQL Database through EC2 Server:
+
+sudo mysql -h application-database.calupg2c7sxe.ap-south-1.rds.amazonaws.com -u admin -pintel123 (Replace with your database endpoints, username and password)
+
+#10: Show the databases:
+
+show databases
+
+#11: Go inside the intel database;
+
+use intel;
+
+#12: Create a table:
+
+create table data (firstname varchar(20), email varchar(20));
+
+#13: Insert the data into the table:
+
+insert into data values ('AWS', 'support@aws.com');
+
+#14: Check the data is successfully inserted or not:
+
+select * from data;
+
+#15: Exit from the database:
+
+exit
+
+#16: Open the index.php file
+
+sudo nano index.php
+
+#17: Change the servername and username in these lines:
+
+servername = “Real Database Endpoint (application-database.calupg2c7sxe.ap-south-1.rds.amazonaws.com)”
+
+username = “admin” instead of “intel”.
+
+#18: Add the php repository:
+
+sudo add-apt-repository -y ppa:ondrej/php
+
+#19: Install the PHP And MySQL Client:
+
+sudo apt install php5.6 mysql-client php5.6-mysqli
+
+#20: Connect with the Database:
+
+sudo mysql -h application-database.calupg2c7sxe.ap-south-1.rds.amazonaws.com -u admin -pintel123 (Replace with your database endpoints, username and password)
+
+#21: Go inside the intel database;
+
+use intel;
+
+#22: Check the data is successfully inserted or not:
+
+select * from data;
